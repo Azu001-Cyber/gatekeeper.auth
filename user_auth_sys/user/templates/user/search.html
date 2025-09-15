@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container index">
+    {% if search_result %}
+    <div class="search-div">
+        <ul>
+            {% for profile in search_result %}
+                <li class="user-list">
+                    @<a href="{% url 'other_users' profile.user.username %}" class="user-link">{{profile.user.username}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+        {% if messages %}
+        <div class="message text-center container">
+            {% for message in messages %}
+                <p class="alert alert-{{message.tags}}">{{message}}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endif %}
+</div>
+    
+{% endblock content %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom  css styles link-->
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- bootstrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Gatekeeper.Auth</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg bg-dark py-3">
+    <div class="container-fluid">
+        {% if user.is_authenticated %}
+        <div class="py-2 px-5">
+        <span class="navbar-text text-light me-auto fw-bold">Welcome, {{ user.username }}</span>
+        </div>
+        {% endif %}
+        <!-- Toggler -->
+        <button class="navbar-toggler text-light bg-light ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex align-items-center gap-3">
+            <li class="nav-item">
+            <a class="nav-link text-light fw-bold" href="{% url 'home' %}">Home</a>
+            </li>
+            {% if not user.is_authenticated %}
+            <li class="nav-item">
+            <a class="nav-link text-light fw-bold" href="{% url 'login' %}">Login</a>
+
+            <li class="nav-item">
+            <a class="nav-link text-light fw-bold" href="{% url 'signup' %}">Signup</a>
+
+            {% elif user.is_authenticated %}
+            <li class="nav-item">
+            <a class="nav-link text-light fw-bold" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% endif %}
+            <li class="nav-item text-nowrap">
+                <a class="btn btn-light fw-bold" href="{% url 'profile' %}">
+                    User Profile <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Search Form -->
+        <form class="d-flex ms-md-3 mt-3 mt-lg-0" role="search" method="GET" action="{%url 'search_user'%}">
+            {% csrf_token %}
+            <input class="form-control mx-3" type="search" name="query" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+        </div>
+    </div>
+    </nav>
+    <div class="my-5">
+        {%block content%}
+        
+        {%endblock content%}
+    </div>
+
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md">
+                    <p class="mb-1">&copy; 2025 Gatekeeper. All rights reserved.</p>
+                </div>
+
+                <div class="col-md">
+                    <ul class="d-flex flex-column mb-2">
+                        <li class="nav-item list-unstyled"><a href="#" class="text-white nav-link footer-nav-link">Privacy Policy</a></li>
+                        <li class="nav-item list-unstyled"><a href="#" class="text-white nav-link footer-nav-link">Terms of Service</a></li>
+                        <li class="nav-item list-unstyled"><a href="{%url 'create_profile' %}" class="text-white nav-link footer-nav-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md">
+                    <p class="mb-0 small">Built by cybercodemomo • Secure. Reliable. Scalable.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
