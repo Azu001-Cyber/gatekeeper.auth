@@ -29,11 +29,14 @@ source venv/bin/activate  # For Windows use venv\Scripts\activate
 pip install -r requirements.txt
 
 3. Run migrations
+```bash
 python manage.py migrate
+```
 
 4. Start the development server
+```bash
 python manage.py runserver
-
+```
 
 # Visual Example
 <!-- Add screenshots -->
