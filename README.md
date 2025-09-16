@@ -22,11 +22,22 @@ cd geetkeeper.auth
 
 2. Create a virtual environment and install dependencies
 
+```bash
 python -m venv {virtual environment name}
+```
+```bash
+source venv/bin/activate 
+```   
 
-source venv/bin/activate  # For Windows use venv\Scripts\activate
+# For Windows use 
 
+```bash
+venv\Scripts\activate
+```
+
+```bash
 pip install -r requirements.txt
+```
 
 3. Run migrations
 ```bash
