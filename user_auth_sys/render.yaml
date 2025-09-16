@@ -1,0 +1,22 @@
+databases:
+  - name: gatekeeperdb
+    plan: free
+    databaseName: gatekeeper
+    user: user_auth_sys
+
+services:
+  - type: web
+    plan: free
+    name: user_auth_sys
+    runtime: python
+    buildCommand: './build.sh'
+    startCommand: 'python -m uvicorn user_auth_sys.asgi:application -k uvicorn.workers.UvicornWorker'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gatekeeperdb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
