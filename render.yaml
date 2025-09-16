@@ -21,3 +21,13 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
+      - key: EMAIL_HOST_USER
+        value: cybercodemomo@gmail.com
+      - key: EMAIL_HOST_PASSWORD
+        value: xawndgtjoajcrvtr
+      - key: EMAIL_HOST
+        value: smtp.gmail.com   # or your SMTP host
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USE_TLS
+        value: "True"
