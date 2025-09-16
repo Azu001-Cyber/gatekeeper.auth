@@ -9,6 +9,7 @@ services:
     plan: free
     name: user_auth_sys
     env: python
+    rootDir: user_auth_sys
     buildCommand: './build.sh'
     startCommand: 'gunicorn user_auth_sys.asgi:application -k uvicorn.workers.UvicornWorker'
     envVars:
