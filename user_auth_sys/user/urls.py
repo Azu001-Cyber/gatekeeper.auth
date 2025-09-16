@@ -20,7 +20,7 @@ urlpatterns = [
     path('profile/<str:username>/', views.retrive_user_profile, name='other_users'),
     path('profile/delete/', views.delete_profile, name="delete_profile"),
     path('account/delete', views.delete_account, name='delete_account'),
-    path('activate/<uidb64>/<token>/', views.ActivateView, name='activate'),
+    path('user/activate/account/<uidb64>/<token>/', views.ActivateView, name='activate'),
     
     # password reset
     path('password/reset/', auth_views.PasswordResetView.as_view(template_name='user/password_reset.html'), name='reset_password'),

@@ -47,7 +47,7 @@ def Signup(request):
             # generate activation link
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token = default_token_generator.make_token(user)
-            activation_path = f'/user/activate/account{uid}/{token}/'
+            activation_path = f'/user/activate/account/{uid}/{token}/'
             activation_link = request.build_absolute_uri(activation_path)
             
             try:

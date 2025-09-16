@@ -3,9 +3,9 @@
     {%block content%}
 
     {% if not has_profile %}
-    <div class="container border rounded-5 m-5 text-center p-5">
-        <h3 class="">No Profile Detail Found</h3>
-            <a href="{%url 'create_profile' %}" class="btn btn-secondary">Create</a>
+    <div class="container border rounded-5 my-5  text-center p-5">
+        <h3 class="fw-bold">No Profile Detail Found</h3>
+            <a href="{%url 'create_profile' %}" class="btn btn-outline-secondary">Create</a>
     </div>
     {% else %}
         <div class="container border rounded-5 m-5 text-center p-5 mx-auto">
