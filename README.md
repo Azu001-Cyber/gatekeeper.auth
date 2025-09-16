@@ -36,13 +36,13 @@ python manage.py runserver
 # Visual Example
 <!-- Add screenshots -->
 ### 📸 Screenshots
-<img src="/user_auth_sys/screenshots/login.png" alt="Login Page" width="600">
-<img src="/user_auth_sys/screenshots/signup.png" alt="Signup Page" width="600">
-<img src="/user_auth_sys/screenshots/home.png" alt="Home Page" width="600">
-<img src="/user_auth_sys/screenshots/verify.png" alt="verify Page" width="600">
-<img src="/user_auth_sys/screenshots/profile.png" alt="Profile Page" width="600">
-<img src="/user_auth_sys/screenshots/user-profile.png" alt="UserProfile Page" width="600">
-<img src="/user_auth_sys/screenshots/search.png" alt="Search Page" width="600">
+<img src="/user_auth_sys/screenshots/login.png" alt="Login Page" width="300">
+<img src="/user_auth_sys/screenshots/signup.png" alt="Signup Page" width="300">
+<img src="/user_auth_sys/screenshots/home.png" alt="Home Page" width="300">
+<img src="/user_auth_sys/screenshots/verify.png" alt="verify Page" width="300">
+<img src="/user_auth_sys/screenshots/profile.png" alt="Profile Page" width="300">
+<img src="/user_auth_sys/screenshots/user-profile.png" alt="UserProfile Page" width="300">
+<img src="/user_auth_sys/screenshots/search.png" alt="Search Page" width="300">
 
 
 
