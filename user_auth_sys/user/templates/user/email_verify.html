@@ -1,8 +1,9 @@
 {%extends "base.html"%}
+{%load static%}
 
 {%block content%}
 
-<div class="container mt-3 text-center">
+<div class="container mt-3 text-center d-flex align-items-center justify-content-center">
     {%if messages%}
         <div class="message">
             {%for message in messages%}

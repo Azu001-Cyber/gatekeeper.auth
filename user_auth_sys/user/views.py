@@ -58,7 +58,7 @@ def Signup(request):
                 recipient_list=[user.email],
                 fail_silently=False
                 )
-                messages.info(request, "Account Created! Check your email to activate.")
+                messages.info(request, "Account Created! Check your email to activate, If not seen Check Spam Folder.")
                 return redirect('verify_email')
             except Exception as e:
                 logger.error(f'Error sending email failed for {user.email}: {e}')
