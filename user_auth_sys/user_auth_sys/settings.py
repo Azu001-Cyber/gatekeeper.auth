@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'user_auth_sys.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default=os.environ.get('DATABASE_URL'),
+        default=config('DATABASE_URL'),
         conn_max_age=600
     )
 }
