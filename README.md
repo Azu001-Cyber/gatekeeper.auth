@@ -70,7 +70,7 @@ python manage.py runserver
 
 <!-- Add live link -->
 ### 🌍 Live Demo
-Check out the live version here: [Live Demo](https://your-live-link.com)
+Check out the live version here: [Live Demo](https://user-auth-sys-1eqb.onrender.com)
 ---
 
 ### 5. **Contributing**
